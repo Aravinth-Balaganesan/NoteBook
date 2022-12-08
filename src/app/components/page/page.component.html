@@ -1,0 +1,14 @@
+<div>
+  <div style="display:flex;justify-content: space-around;"> <span *ngFor="let p of pages">
+      <button class="button button-small" [ngClass]="{'active': currentPage === p?.page}"
+      tabindex="{{p?.page}}" (click)="pageRedirection(p?.page)">
+        Page {{p?.page}}
+      </button>
+    </span>
+  </div>
+
+  <h3>Type notes here : </h3>
+
+  <textarea [appFocus]="true" class="inputPad" [(ngModel)]="notes"  (change)="savePageData()" rows="7" cols="100"></textarea>
+
+</div>
